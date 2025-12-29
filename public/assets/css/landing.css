@@ -1,0 +1,755 @@
+/* ðŸŒ General styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-main: linear-gradient(135deg, #cfe9f7, #eef3f8);
+  --bg-soft: #f8fafb;
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --white: #ffffff;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-dark);
+}
+
+/* ðŸ§­ Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(180deg, #eaf2fb, #f5f9fd);
+color: var(--text-dark);
+  padding: 15px 60px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ðŸ« Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.logo h2 {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ðŸ“‹ Nav Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+/* ðŸ”˜ Login Button */
+.nav-buttons .btn {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  border: 2px solid #ffd166;
+  color: #ffd166;
+}
+
+.nav-buttons .btn:hover {
+   background: var(--primary);
+  color: white;
+}
+
+/* ðŸ“± Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 30px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-buttons {
+    margin-top: 15px;
+  }
+}
+
+/* =========================
+   ðŸŽ“ HERO SECTION
+   ========================= */
+.hero {
+  background: linear-gradient(135deg, #cfe9f7, #eef3f8);
+  color: var(--text-dark);
+  text-align: center;
+  padding: 80px 20px 170px; /* â¬… increased bottom padding */
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+/* Hero Content */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
+  position: relative;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 35px;
+  color: var(--text-muted);
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.hero-buttons .btn {
+  text-decoration: none;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.hero-buttons .get-started {
+  background: #ffd166;
+  color: #1a8c8c;
+}
+
+.hero-buttons .get-started:hover {
+  background: #fff;
+  color: #1a8c8c;
+}
+
+.hero-buttons .login-now {
+  background: #000;
+  color: #fff;
+}
+
+.hero-buttons .login-now:hover {
+  background: #333;
+}
+
+/* =========================
+   ðŸŽ“ STUDENT IMAGE CARDS
+   ========================= */
+.hero-images {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.img-card {
+  width: 220px;
+  height: 330px;
+  border-radius: 110px / 160px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  border: 4px solid #fff;
+  background-color: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.4s ease;
+}
+
+.img-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+.img-card:hover img {
+  transform: scale(1.07);
+}
+
+/* Backgrounds */
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero h1 { font-size: 2.2rem; }
+  .hero-images { gap: 25px; }
+  .img-card {
+    width: 180px;
+    height: 270px;
+    border-radius: 90px / 130px;
+  }
+}
+
+/* =========================
+   ðŸ“š ABOUT SECTION
+   ========================= */
+.about {
+  background-color: #ffffff;
+  position: relative;
+  margin-top: -120px; /* pulls it up to overlap hero */
+  padding: 140px 80px 100px;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 80px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+}
+
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+
+}
+
+/* Left image */
+.about-image {
+  flex: 1;
+  position: relative;
+}
+
+.about-image .main-img {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-image .small-img {
+  position: absolute;
+  bottom: -40px;
+  right: -40px;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Right content */
+.about-content {
+  flex: 1;
+}
+
+.about-content h3 {
+  color: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.about-content p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* Features */
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.feature {
+  background: linear-gradient(135deg, #cfe9f7, #eef3f8);
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.feature:hover {
+  background: #0d33f2;
+  color: white;
+}
+
+/* Buttons & contact */
+.about-buttons {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.learn-more {
+  background: #cfe9f7;
+  color: #000000;
+  padding: 12px 28px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.learn-more:hover {
+  background: #0d33f2;
+  color: white;
+}
+
+.contact-info span {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.contact-info p {
+  color: #0d33f2;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 4px 0 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-image .small-img {
+    display: none;
+  }
+
+  .about-content h2 {
+    font-size: 1.7rem;
+  }
+
+  .about-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+
+
+
+
+
+/* =========================
+   ðŸ§© PROGRAMS SECTION
+   ========================= */
+.programs {
+  background-color: #ffffff;
+  padding: 100px 10px;
+  text-align: center;
+  position: relative;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin-bottom: 200px;
+    margin-top: 100px;
+  
+}
+
+.programs h2 {
+  color: #1a8c8c;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 40px;
+}
+
+/* Scrollable container */
+.programs-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 25px;
+  scroll-behavior: smooth;
+  padding-bottom: 15px;
+  scrollbar-width: thin;
+  scrollbar-color: #1a8c8c #e0e0e0;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.programs-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+.programs-scroll::-webkit-scrollbar-track {
+  background: #e8e8e8;
+  border-radius: 10px;
+}
+.programs-scroll::-webkit-scrollbar-thumb {
+  background: #1a8c8c;
+  border-radius: 10px;
+}
+
+/* Individual cards */
+.program-card {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 30px 20px;
+  min-width: 240px;
+  flex: 0 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.program-card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.program-card h3 {
+  color: #1a8c8c;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.program-card p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* View all button */
+.view-all {
+  display: inline-block;
+  margin-top: 40px;
+  color: #1a8c8c;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-all:hover {
+  color: #0e5d5d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .programs {
+    padding: 80px 20px;
+  }
+  .program-card {
+    min-width: 200px;
+  }
+}
+
+
+
+
+
+
+
+
+/* Section Base */
+.checklist-section {
+  background: #f8fafb;
+  padding: 80px 20px;
+  text-align: center;
+  margin-top: 200px;
+}
+
+.checklist-section h2 {
+  color: #1a8c8c;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 60px;
+}
+
+/* Steps Container */
+.steps-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 65px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Step Wrapper */
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Alternating Direction */
+.step-right {
+  flex-direction: row-reverse;
+}
+
+.step-left {
+  flex-direction: row;
+}
+
+/* Step Number */
+.step-number {
+  background: #ffffff;
+  color: #cfe9f7;
+  font-size: 1.8rem;
+  font-weight: 700;
+  border-radius: 10px 19px 19px 10px;
+  width: 70px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Right side shape */
+.step-right .step-number {
+  border-radius: 10px 19px 19px 10px;
+}
+
+/* Step Content Box */
+.step-content {
+  background: linear-gradient(135deg, #cfe9f7, #eef3f8);
+  padding: 20px 25px;
+  border-radius: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 80px;
+  margin-left: -20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adjust for right steps */
+.step-right .step-content {
+  margin-right: -20px;
+  margin-left: 0;
+}
+
+/* Hover effect */
+.step-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Step Icon */
+.step-icon {
+  font-size: 1.8rem;
+  color: #1a8c8c;
+}
+
+/* Step Text */
+.step-content h3 {
+  font-size: 1.1rem;
+  color: #1a8c8c;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.step-content p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .step {
+    flex-direction: column !important;
+  }
+
+  .step-number {
+    border-radius: 15px;
+    width: 55px;
+    height: 55px;
+    margin-bottom: 15px;
+  }
+
+  .step-content {
+    margin: 0;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+/* ==========================
+   ðŸŽ¬ SCROLL ANIMATIONS
+========================== */
+
+/* ==========================
+   ðŸŽ¬ SCROLL ANIMATIONS (FIXED)
+========================== */
+
+/* Base hidden state */
+.step {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+  will-change: transform, opacity;
+}
+
+/* Prepare movement without breaking layout */
+.step.step-left {
+  transform: translateX(-80px);
+}
+
+.step.step-right {
+  transform: translateX(80px);
+}
+
+/* When visible */
+.step.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* ===== ROLE CHOOSER ===== */
+.roles {
+    
+  background: #f8fafb;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.role-card {
+    margin-top: 100px;
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.role-card h3 {
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+/* ===== FOOTER ===== */
+.footer {
+    background: linear-gradient(180deg, #eaf2fb, #f5f9fd);
+  color: var(--text-dark);
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===== BUTTON BASE ===== */
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+}
+
+/* ===== PRIMARY BUTTON (Sign Up) ===== */
+.btn.primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn.dark {
+  background: var(--primary);
+  color: white;
+}
+
+.btn.dark:hover {
+  background: var(--primary-hover);
+}
+
+/* ===== ROLE CARD SPACING ===== */
+.role-card .btn {
+    margin-top: 15px;
+}

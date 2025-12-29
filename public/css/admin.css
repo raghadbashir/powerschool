@@ -1,0 +1,52 @@
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 220px;
+    background: #eaf1f7;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin: 0 0 30px;
+    font-size: 20px;
+    color: #2563eb;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #334155;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.sidebar a.active,
+.sidebar a:hover {
+    background: #2563eb;
+    color: white;
+}
+
+.sidebar .logout {
+    margin-top: 40px;
+    color: #dc2626;
+}
+
+/* ===== MAIN ===== */
+.main {
+    flex: 1;
+    padding: 20px 30px;
+}
+
+/* ===== HEADER ===== */
+.header {
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #1e293b;
+}
